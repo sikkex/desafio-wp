@@ -1,0 +1,67 @@
+.formulario {
+  padding-left: 2rem;
+  margin-top: 2rem;
+}
+form{
+  display: flex;
+  align-items: baseline;
+}
+.form {
+  display: flex;
+  flex-direction: inherit;
+  align-items: baseline;
+}
+.Cadastro {
+  height: 100%;
+}
+#input {
+  height: 2rem;
+  border-bottom: solid 0.02rem;
+  padding: 0;
+  padding-top: 0.5rem;
+  font-size: large;
+}
+
+#botao {
+  display: flex;
+  font-size: initial;
+  background: rgba(122, 58, 240, 0.39);
+  color: black
+}
+#botao:hover {
+  background: rgba(122, 58, 240, 0.651);
+  cursor: pointer;
+}
+.lista-produtos {
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-direction: unset;
+  height: 80%;
+}
+.moldura {
+  margin-top: 2rem;
+    width: 40%;
+    background: aliceblue;
+    border-radius: 1rem;
+    border-bottom: 0.5rem solid whitesmoke;
+    border-right: 0.3rem solid whitesmoke;
+}
+
+.subtitulo {
+  font-size: x-large;
+  border-bottom: 0.05rem solid;
+  text-align: center;
+  
+}
+.scroll-area {
+  height: 90%;
+  margin-top: 0.5rem;
+}
+.scrollarea {
+  height: 95%;
+}
+li{
+  border-bottom: 0.01rem solid #c5c5c5f1;
+}

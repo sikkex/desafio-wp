@@ -1,0 +1,22 @@
+.login {
+  width: 20rem;
+  align-self: center;
+  background: #daf4fff6;
+  height: 35rem;
+  border-radius: 0.3rem;
+  border-bottom: 0.28rem solid #acc6d1;
+  border-left: 0.25rem solid #acc6d1;
+}
+#firebaseui_container{
+  margin-top: 6em;
+}
+.estoque {
+height: 35%;
+position: relative;
+left: 18%;
+top: 2rem;
+}
+.firebaseui-idp-list {
+  position: absolute;
+  left: 3.3rem;
+}
