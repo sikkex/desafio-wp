@@ -9,6 +9,8 @@ import estoque from '../../assets/warehouse.png'
 export default class Login extends Component {
   state = { isSignedIn: false }
   
+  // resolvi retirar a autenticação por email, devido a um bugg visual,
+  // pretendo retomar e consertar esse erro
   uiConfig = {
     signInFlow: "popup",
     signInOptions: [
@@ -29,6 +31,7 @@ export default class Login extends Component {
   }
 
   render() {
+    // ao ser autenticado, o usuário é redirecionado para o dashboard
     return <div className="login">
       <img className="estoque" src={estoque} alt= "estoque"/>
       {this.state.isSignedIn ? 

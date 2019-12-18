@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ScrollArea from 'react-scrollbar'
+import { parseISO, isAfter } from 'date-fns'
 
 import firebase from '../../Firebase';
 
@@ -15,6 +16,7 @@ export default class Cadastro extends Component {
       quantidade:'',
       precoMedio: '',
       precoCompra: '',
+      data: '',
       lista: []
 
     };
@@ -29,7 +31,12 @@ export default class Cadastro extends Component {
     e.preventDefault();
     
     const { produto, quantidade, precoCompra, precoMedio, userId } = this.state;
-
+    const tempo = new Date()
+    let data = tempo.getHours().toString()  + tempo.getMinutes().toString() +
+                tempo.getSeconds().toString() + tempo.getUTCDate().toString() +
+                tempo.getUTCMonth().toString() + tempo.getUTCFullYear().toString()
+    
+    // faz update no banco, colocando no final do Array
     this.ref.update({
       produtos: firebase.firestore.FieldValue.arrayUnion(
         {
@@ -37,7 +44,8 @@ export default class Cadastro extends Component {
           produto: produto,
           quantidade:parseInt(quantidade),
           precoCompra:parseFloat(precoCompra),
-          precoMedio:precoCompra/quantidade
+          precoMedio:precoCompra/quantidade,
+          data: data
         }
       )
     }).then((docRef) => {
@@ -46,7 +54,8 @@ export default class Cadastro extends Component {
         produto: '',
         quantidade: '',
         precoCompra: '',
-        precoMedio: ''
+        precoMedio: '',
+        data: '',
       })
     })
     .catch((error) => {
@@ -83,13 +92,14 @@ export default class Cadastro extends Component {
                   <input className="input" type="text" name="produto" value={produto} onChange={this.onChange} placeholder="Produto" />
                 </div>
                 <div class="form-group">
-                  
+                  {/* inputs recebem somente números para evitar erros */}
                   <input className="input" type="number" name="quantidade" value={quantidade} onChange={this.onChange} placeholder="Quantidade" />
                 </div>
                 <div class="form-group">
                   
                   <input className="input" type="number" name="precoCompra" value={precoCompra} onChange={this.onChange} placeholder="Preço de Compra" />
                 </div>
+                {/* tratamento de possíveis erros, o botão só será liberado sob essas condições */}
                 <button id="botao" 
                 disabled={
                   !produto || produto == NaN, 
@@ -114,8 +124,8 @@ export default class Cadastro extends Component {
                   <tr>
                   <td>{produto.produto}</td>
                   <td>{produto.quantidade}</td>
-                  <td>{produto.precoCompra}</td>
-                  <td>{produto.precoMedio}</td>
+                  <td>R$: {produto.precoCompra}</td>
+                  <td>R$: {produto.precoMedio}</td>
                   </tr>                
                 )}
                 </tbody>

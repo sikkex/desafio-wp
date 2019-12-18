@@ -59,6 +59,8 @@ export default function Dashboard({history}) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
+  // caso o usuário entre sem se autenticar, ele é mandado de volta para 
+  // a tela de Login
   const componentDidMount = () => {
     if(firebase.auth().currentUser === null) history.push("/")
   }
@@ -84,7 +86,8 @@ export default function Dashboard({history}) {
                     history.push("/")
               }}/>
           </Tabs>
-
+              
+        {/* faz a navegação entre os components através de abas */}
         </AppBar>
         <TabPanel value={value} index={0}>
           <Cadastro />
@@ -92,6 +95,8 @@ export default function Dashboard({history}) {
         <TabPanel value={value} index={1}>
           <Comprar/>
         </TabPanel>
+        {/* Preferi retirar o histórico de compras de uma aba separada, 
+            pois ficou muito espaço vazio na aba de compras */}
         {/* <TabPanel value={value} index={2}>
           Histórico de Compras
           <Lista />

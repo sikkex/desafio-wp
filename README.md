@@ -1,68 +1,31 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Desafio WPensar
 
-## Available Scripts
+Foi usado controle de dependências , o yarn.
+O projeto foi terminado con sucesso e no prazo, atendendo a todos os requisitos desejados.
 
-In the project directory, you can run:
+no projeto foi utilizado libs públicas, estando todas listadas no package.json
 
-### `yarn start`
+Fiz o projeto com o controle de versão git, subindo no meu github para fazer deploy no netlify.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+O Sistema é bem simples, conta com duas páginas, uma de Login e um Dashboard.
+No login você encontrará as principais formas de autenticação de hoje em dia,
+entretanto, devido a um bugg visual, optei por retirar a autenticação por e-mail,
+deixando somente a do Google, Facebook e Github.
+O Dashboard conta com uma navegação por abas, seriam 4 campos no total,
+mas devido a um erro e ao layout final, optei por deixar essas 2. As abas retiradas
+eram a aba de boas vindas, que teria o nome pego no e-mail e a foto do usuário, 
+porém devido a um erro de desempenho no meu computador, esse get nas informações
+estava dando erro de login. A outra aba seria contendo o histórico de compras, 
+achei desnecessário pois seria melhor colocar na aba de compras.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Iniciar o projeto
+Digitar o comando yarn no terminal para download do node_modules e depois usar o comnado yarn start
+para iniciar o projeto.
 
-### `yarn test`
+### Deploy do projeto
+Foi feito o deploy do projeto no Netlify:
+https://sharp-liskov-46bdb4.netlify.com/
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### Banco de Dados e Autenticação
+Foi feito com o Firebase, usando o banco de dados da Firestore e a Autenticação deles.
+Somente usuários autenticados podem manipular e visualizar as informações do banco.
